@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style type="text/css">
+*{margin:0;padding:0;}
+.box{width:400px;height:100px;border:1px solid #000;
+	overflow: hidden;
+	position: relative;margin-left:600px;margin-top:40px;
+}
+.content{width:400px;height:400px;
+		position: absolute;left:0;top:0;
+		animation:demo 1s linear infinite;
+		background: -webkit-repeating-linear-gradient(-45deg,green 0,green 20px,#fff 20px,#fff 40px,yellow 40px,yellow 60px,#fff 60px,#fff 80px);
+
+	}
+@keyframes demo{
+	from{top:0;}
+	to{top:-113px;}
+}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var aInput = document.querySelectorAll('input');
+		var aDiv = document.querySelectorAll('div');
+		aInput[0].onchange = function(){
+			aDiv[1].style.background = '-webkit-repeating-linear-gradient(-45deg,'+aInput[0].value+' 0,'+aInput[0].value+' 20px,#fff 20px,#fff 40px,'+aInput[1].value+' 40px,'+aInput[1].value+' 60px,#fff 60px,#fff 80px)';
+		};
+		aInput[1].onchange = function(){
+			aDiv[1].style.background = '-webkit-repeating-linear-gradient(-45deg,'+aInput[0].value+' 0,'+aInput[0].value+' 20px,#fff 20px,#fff 40px,'+aInput[1].value+' 40px,'+aInput[1].value+' 60px,#fff 60px,#fff 80px)';
+		};
+	};
+</script>
+</head>
+<body>
+	<input type="color" value="#ff00ff">
+	<input type="color" value="#ddff00">
+	<div class="box">
+		<div class="content"></div>
+	</div>
+</body>
+</html>

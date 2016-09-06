@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		ul{
+			overflow: hidden;
+			width:600px;
+			margin:80px auto;
+		}
+		ul li{
+			list-style: none;
+			float:left;
+			width:150px;
+			height:80px;
+			border-radius: 20px;
+			overflow: hidden;
+			margin-left:20px;
+			position: relative;
+		}
+		ul li span{
+			width:150px;
+			height:80px;
+			text-align: center;
+			line-height: 80px;
+			font-size: 30px;
+			font-weight: bold;
+			text-shadow:6px 6px 10px #000;
+			border-radius: 20px;
+			background: #ccc;
+			position: absolute;
+			left:0;
+			top:0;
+		}
+		img{
+			width:150px;
+			height:80px;
+			border-radius: 20px;
+		}
+		@keyframes move{
+			from{top:0px;}
+			to{top:-80px;}
+		}
+	  li span:hover{animation:move 1s ease infinite;}
+	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+		var aLi = document.querySelectorAll('li');
+		var aSpan = document.querySelectorAll('span');
+		//alert(aSpan.length);
+		for(var i=0; i<aSpan.length; i++){
+
+			aSpan[i].onmouseover = function(){
+				//aSpan[i].style.animation = 'move 1s ease infinite';
+				/*aSpan[i].style.WebkitTransition = '1s all ease';
+				aSpan[i].style.MozTransition = '1s all ease';
+				aSpan[i].style.msTransition = '1s all ease';
+				aSpan[i].style.OTransition = '1s all ease';
+				aSpan[i].style.transition = '1s all ease';
+				aSpan[i].style.top = '-80px';*/
+			};
+		}
+	};
+	</script>
+</head>
+<body>
+	<ul>
+		<li>
+			<span>img1</span>
+			<img src="0.jpg">
+		</li>
+		<li>
+			<span>img2</span>
+			<img src="1.jpg">
+		</li>
+		<li>
+			<span>img3</span>
+			<img src="2.jpg">
+		</li>
+	</ul>
+</body>
+</html>
